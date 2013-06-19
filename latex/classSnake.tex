@@ -1,0 +1,240 @@
+\hypertarget{classSnake}{\section{\-Snake \-Class \-Reference}
+\label{classSnake}\index{\-Snake@{\-Snake}}
+}
+
+
+\-The \hyperlink{classSnake}{\-Snake} \-Represents the infinitely growing snake which is made up of a vector of \hyperlink{classSnakeBlock}{\-Snake\-Block} pointers.  
+
+
+
+
+{\ttfamily \#include $<$\-Snake.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSnake_aa9cbcdb4b25d84cbf83509039cac8d01}{\hyperlink{classSnake_aa9cbcdb4b25d84cbf83509039cac8d01}{\-Snake} ()}\label{classSnake_aa9cbcdb4b25d84cbf83509039cac8d01}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Constructor -\/ \-Makes a \hyperlink{classSnake}{\-Snake}, one block big appear. on the screen, and initializes the data members to default values \-Precondition\-: \-New game has started. \-Postcondition\-: \hyperlink{classSnake}{\-Snake} head appears in the center of the screen. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_a941fbaad96ee33ca3a7c30c28ca44ef8}{\hyperlink{classSnake_a941fbaad96ee33ca3a7c30c28ca44ef8}{$\sim$\-Snake} ()}\label{classSnake_a941fbaad96ee33ca3a7c30c28ca44ef8}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Destructor -\/ \-Deletes dynamically allocated vector of \hyperlink{classSnakeBlock}{\-Snake\-Block} pointers. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_a8b9e117d03b8b8dd00e3ea199cdb49aa}{void \hyperlink{classSnake_a8b9e117d03b8b8dd00e3ea199cdb49aa}{reset\-State} ()}\label{classSnake_a8b9e117d03b8b8dd00e3ea199cdb49aa}
+
+\begin{DoxyCompactList}\small\item\em \-Resets the \hyperlink{classSnake}{\-Snake} to one block big and in center and sets the data members to default values. \-Precondition\-: \-New game has started. \-Postcondition\-: \hyperlink{classSnake}{\-Snake} head appears in the center of the screen. \end{DoxyCompactList}\item 
+void \hyperlink{classSnake_a1142c1242116333d25b86a692c5cb73d}{go\-Right} (bool \&wrap\-Around)
+\begin{DoxyCompactList}\small\item\em \-Moves the whole \hyperlink{classSnake}{\-Snake} right one block and changes image to going right image, unless the \hyperlink{classSnake}{\-Snake} is going left and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Right arrow or the last valid direction was right. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved right one block. \end{DoxyCompactList}\item 
+void \hyperlink{classSnake_a9dd8827f9459d6006cdac807c0366b1e}{go\-Left} (bool \&wrap\-Around)
+\begin{DoxyCompactList}\small\item\em \-Moves the whole \hyperlink{classSnake}{\-Snake} left one block and changes image to going left image, unless the \hyperlink{classSnake}{\-Snake} is going right and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Left arrow or the last valid direction was left. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved left one block. \end{DoxyCompactList}\item 
+void \hyperlink{classSnake_a3ad73edf3dddabb0848bf9981f81089c}{go\-Up} (bool \&wrap\-Around)
+\begin{DoxyCompactList}\small\item\em \-Moves the whole \hyperlink{classSnake}{\-Snake} up one block and changes image to going up image, unless the \hyperlink{classSnake}{\-Snake} is going down and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Up arrow or the last valid direction was up. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved up one block. \end{DoxyCompactList}\item 
+void \hyperlink{classSnake_aba257e6da370608bf0f1587b04e3d900}{go\-Down} (bool \&wrap\-Around)
+\begin{DoxyCompactList}\small\item\em \-Moves the whole \hyperlink{classSnake}{\-Snake} down one block and changes image to going down image, unless the \hyperlink{classSnake}{\-Snake} is going up and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Down arrow or the last valid direction was down. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved down one block. \end{DoxyCompactList}\item 
+void \hyperlink{classSnake_ac5c9c032ac3f9c5969e2a447a9600327}{auto\-Move} (bool \&wrap\-Around)
+\begin{DoxyCompactList}\small\item\em \-Moves the \hyperlink{classSnake}{\-Snake} one block in the last valid direction. \-Precondition\-: \-Timer event occured \-Postcondition\-: \-The \hyperlink{classSnake}{\-Snake} is moved one block in the last valid direction. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_a959eeb2c461a36a9e51de931d6917a75}{void \hyperlink{classSnake_a959eeb2c461a36a9e51de931d6917a75}{grow} ()}\label{classSnake_a959eeb2c461a36a9e51de931d6917a75}
+
+\begin{DoxyCompactList}\small\item\em \-Adds one \hyperlink{classSnakeBlock}{\-Snake\-Block} to the end of the \hyperlink{classSnake}{\-Snake}. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a normal piece of food \-Postcondition\-: \-Adds one \hyperlink{classSnakeBlock}{\-Snake\-Block} to the end of the \hyperlink{classSnake}{\-Snake}. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnake_abc4975f0815e06bc9aae499c9ec4a1ad}{check\-Bad\-Food} (\hyperlink{classFood}{\-Food} $\ast$food)
+\begin{DoxyCompactList}\small\item\em \-Checks if \hyperlink{classFood}{\-Food} is on top of \hyperlink{classSnake}{\-Snake}. \-Precondition\-: \-A \hyperlink{classFood}{\-Food} object was moved. \-Postcondition\-: \-Returns \-True, if food is on top of \hyperlink{classSnake}{\-Snake}. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnake_ac31845fa6830b6bba11cc7ed36e9ea74}{check\-Collision} ()
+\begin{DoxyCompactList}\small\item\em \-Checks if \hyperlink{classSnake}{\-Snake} head collided with the \hyperlink{classSnake}{\-Snake} body. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} moved. \-Postcondition\-: \-Returns \-True, if the \hyperlink{classSnake}{\-Snake} head collided with the \hyperlink{classSnake}{\-Snake} body. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnake_a30c2dd4b32595e3bc464229be093b9b0}{hits\-Wall} ()
+\begin{DoxyCompactList}\small\item\em \-Checks if \hyperlink{classSnake}{\-Snake} head collided with the wall (off the screen). \-Precondition\-: \-Wrap around is disabled and the \hyperlink{classSnake}{\-Snake} moved. \-Postcondition\-: \-Returns \-True, if the \hyperlink{classSnake}{\-Snake} head collided with the wall. \end{DoxyCompactList}\item 
+void \hyperlink{classSnake_a0eb0c03d97810d2f18480fdd376634fe}{draw\-Snake} (\-Q\-Painter \&painter)
+\begin{DoxyCompactList}\small\item\em \-Paints the entire vector of \-Snake\-Blocks on the screen at its current location. \-Precondition\-: \-Instance of \hyperlink{classGame}{\-Game} called a paint event and the game is started. \-Postcondition\-: \-The whole \hyperlink{classSnake}{\-Snake} will be painted on the screen. \end{DoxyCompactList}\item 
+\-Q\-Rect \hyperlink{classSnake_a71b566d9cbf90ff5533ff0a963576150}{get\-Rect} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Qrect of the \hyperlink{classSnake}{\-Snake} head (front of snake). \-Precondition\-: \-Any collision detection that involes the \hyperlink{classSnake}{\-Snake} occured. \-Postcondition\-: \-The \-Qrect of the \hyperlink{classSnake}{\-Snake} head (front of snake) is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSnake_a1ee5aed86699752da1f1c8370b2ac10f}{std\-::vector$<$ \hyperlink{classSnakeBlock}{\-Snake\-Block} $\ast$ $>$ \hyperlink{classSnake_a1ee5aed86699752da1f1c8370b2ac10f}{snake\-Blocks}}\label{classSnake_a1ee5aed86699752da1f1c8370b2ac10f}
+
+\begin{DoxyCompactList}\small\item\em \-Vector of \hyperlink{classSnakeBlock}{\-Snake\-Block} pointers. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_a3b04724ab4b1af28afa2e6656f96eeb8}{int \hyperlink{classSnake_a3b04724ab4b1af28afa2e6656f96eeb8}{x}}\label{classSnake_a3b04724ab4b1af28afa2e6656f96eeb8}
+
+\begin{DoxyCompactList}\small\item\em \-Current or future x position of front block (head of snake). \end{DoxyCompactList}\item 
+\hypertarget{classSnake_ae5de2b952ebcabe85bfab67f086fa114}{int \hyperlink{classSnake_ae5de2b952ebcabe85bfab67f086fa114}{y}}\label{classSnake_ae5de2b952ebcabe85bfab67f086fa114}
+
+\begin{DoxyCompactList}\small\item\em \-Current or future y position of front block (head of snake). \end{DoxyCompactList}\item 
+\hypertarget{classSnake_a539e9605b40dfd9a305fe3ed5af422a3}{int \hyperlink{classSnake_a539e9605b40dfd9a305fe3ed5af422a3}{x\-Dir}}\label{classSnake_a539e9605b40dfd9a305fe3ed5af422a3}
+
+\begin{DoxyCompactList}\small\item\em \-Current x direction of \hyperlink{classSnake}{\-Snake}. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_aec1cc51dcc8e9dbe77489b7bddd5b775}{int \hyperlink{classSnake_aec1cc51dcc8e9dbe77489b7bddd5b775}{y\-Dir}}\label{classSnake_aec1cc51dcc8e9dbe77489b7bddd5b775}
+
+\begin{DoxyCompactList}\small\item\em \-Current y direction of the \hyperlink{classSnake}{\-Snake}. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_ac8a28e5d33533350a5d0c6545ed7c1cc}{int \hyperlink{classSnake_ac8a28e5d33533350a5d0c6545ed7c1cc}{grows\-Count}}\label{classSnake_ac8a28e5d33533350a5d0c6545ed7c1cc}
+
+\begin{DoxyCompactList}\small\item\em \-Number of times the snake has grown. \end{DoxyCompactList}\item 
+\hypertarget{classSnake_a7488f087123856aba512f6518d8db8aa}{int \hyperlink{classSnake_a7488f087123856aba512f6518d8db8aa}{switch\-Body}}\label{classSnake_a7488f087123856aba512f6518d8db8aa}
+
+\begin{DoxyCompactList}\small\item\em \-Used to switch between \hyperlink{classSnake}{\-Snake} body block images. \-When 0, \hyperlink{classSnakeBlock}{\-Snake\-Block} will be blue. \-When 1, \hyperlink{classSnakeBlock}{\-Snake\-Block} will be purple. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The \hyperlink{classSnake}{\-Snake} \-Represents the infinitely growing snake which is made up of a vector of \hyperlink{classSnakeBlock}{\-Snake\-Block} pointers. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classSnake_ac5c9c032ac3f9c5969e2a447a9600327}{\index{\-Snake@{\-Snake}!auto\-Move@{auto\-Move}}
+\index{auto\-Move@{auto\-Move}!Snake@{\-Snake}}
+\subsubsection[{auto\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-::auto\-Move} (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{wrap\-Around}
+\end{DoxyParamCaption}
+)}}\label{classSnake_ac5c9c032ac3f9c5969e2a447a9600327}
+
+
+\-Moves the \hyperlink{classSnake}{\-Snake} one block in the last valid direction. \-Precondition\-: \-Timer event occured \-Postcondition\-: \-The \hyperlink{classSnake}{\-Snake} is moved one block in the last valid direction. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \&wrap\-Around} & \-If true, allows wrap around. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnake_abc4975f0815e06bc9aae499c9ec4a1ad}{\index{\-Snake@{\-Snake}!check\-Bad\-Food@{check\-Bad\-Food}}
+\index{check\-Bad\-Food@{check\-Bad\-Food}!Snake@{\-Snake}}
+\subsubsection[{check\-Bad\-Food}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Snake\-::check\-Bad\-Food} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Food} $\ast$}]{food}
+\end{DoxyParamCaption}
+)}}\label{classSnake_abc4975f0815e06bc9aae499c9ec4a1ad}
+
+
+\-Checks if \hyperlink{classFood}{\-Food} is on top of \hyperlink{classSnake}{\-Snake}. \-Precondition\-: \-A \hyperlink{classFood}{\-Food} object was moved. \-Postcondition\-: \-Returns \-True, if food is on top of \hyperlink{classSnake}{\-Snake}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$food} & \hyperlink{classFood}{\-Food} object pointer. \-It will be used to check if it is on top of the \hyperlink{classSnake}{\-Snake}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \hyperlink{classFood}{\-Food} is on top of the \hyperlink{classSnake}{\-Snake}. 
+\end{DoxyReturn}
+\hypertarget{classSnake_ac31845fa6830b6bba11cc7ed36e9ea74}{\index{\-Snake@{\-Snake}!check\-Collision@{check\-Collision}}
+\index{check\-Collision@{check\-Collision}!Snake@{\-Snake}}
+\subsubsection[{check\-Collision}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Snake\-::check\-Collision} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnake_ac31845fa6830b6bba11cc7ed36e9ea74}
+
+
+\-Checks if \hyperlink{classSnake}{\-Snake} head collided with the \hyperlink{classSnake}{\-Snake} body. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} moved. \-Postcondition\-: \-Returns \-True, if the \hyperlink{classSnake}{\-Snake} head collided with the \hyperlink{classSnake}{\-Snake} body. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \hyperlink{classSnake}{\-Snake} head collided with the \hyperlink{classSnake}{\-Snake} body. 
+\end{DoxyReturn}
+\hypertarget{classSnake_a0eb0c03d97810d2f18480fdd376634fe}{\index{\-Snake@{\-Snake}!draw\-Snake@{draw\-Snake}}
+\index{draw\-Snake@{draw\-Snake}!Snake@{\-Snake}}
+\subsubsection[{draw\-Snake}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-::draw\-Snake} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Painter \&}]{painter}
+\end{DoxyParamCaption}
+)}}\label{classSnake_a0eb0c03d97810d2f18480fdd376634fe}
+
+
+\-Paints the entire vector of \-Snake\-Blocks on the screen at its current location. \-Precondition\-: \-Instance of \hyperlink{classGame}{\-Game} called a paint event and the game is started. \-Postcondition\-: \-The whole \hyperlink{classSnake}{\-Snake} will be painted on the screen. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \&painter} & \-Q\-Painter object created in \hyperlink{classGame}{\-Game} to paint images on screen. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnake_a71b566d9cbf90ff5533ff0a963576150}{\index{\-Snake@{\-Snake}!get\-Rect@{get\-Rect}}
+\index{get\-Rect@{get\-Rect}!Snake@{\-Snake}}
+\subsubsection[{get\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Rect {\bf \-Snake\-::get\-Rect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnake_a71b566d9cbf90ff5533ff0a963576150}
+
+
+\-Returns the \-Qrect of the \hyperlink{classSnake}{\-Snake} head (front of snake). \-Precondition\-: \-Any collision detection that involes the \hyperlink{classSnake}{\-Snake} occured. \-Postcondition\-: \-The \-Qrect of the \hyperlink{classSnake}{\-Snake} head (front of snake) is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Returns \-Qrect of the \hyperlink{classSnake}{\-Snake} head (front of snake). 
+\end{DoxyReturn}
+\hypertarget{classSnake_aba257e6da370608bf0f1587b04e3d900}{\index{\-Snake@{\-Snake}!go\-Down@{go\-Down}}
+\index{go\-Down@{go\-Down}!Snake@{\-Snake}}
+\subsubsection[{go\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-::go\-Down} (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{wrap\-Around}
+\end{DoxyParamCaption}
+)}}\label{classSnake_aba257e6da370608bf0f1587b04e3d900}
+
+
+\-Moves the whole \hyperlink{classSnake}{\-Snake} down one block and changes image to going down image, unless the \hyperlink{classSnake}{\-Snake} is going up and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Down arrow or the last valid direction was down. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved down one block. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \&wrap\-Around} & \-If true, allows wrap around. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnake_a9dd8827f9459d6006cdac807c0366b1e}{\index{\-Snake@{\-Snake}!go\-Left@{go\-Left}}
+\index{go\-Left@{go\-Left}!Snake@{\-Snake}}
+\subsubsection[{go\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-::go\-Left} (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{wrap\-Around}
+\end{DoxyParamCaption}
+)}}\label{classSnake_a9dd8827f9459d6006cdac807c0366b1e}
+
+
+\-Moves the whole \hyperlink{classSnake}{\-Snake} left one block and changes image to going left image, unless the \hyperlink{classSnake}{\-Snake} is going right and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Left arrow or the last valid direction was left. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved left one block. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \&wrap\-Around} & \-If true, allows wrap around. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnake_a1142c1242116333d25b86a692c5cb73d}{\index{\-Snake@{\-Snake}!go\-Right@{go\-Right}}
+\index{go\-Right@{go\-Right}!Snake@{\-Snake}}
+\subsubsection[{go\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-::go\-Right} (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{wrap\-Around}
+\end{DoxyParamCaption}
+)}}\label{classSnake_a1142c1242116333d25b86a692c5cb73d}
+
+
+\-Moves the whole \hyperlink{classSnake}{\-Snake} right one block and changes image to going right image, unless the \hyperlink{classSnake}{\-Snake} is going left and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Right arrow or the last valid direction was right. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved right one block. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \&wrap\-Around} & \-If true, allows wrap around. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnake_a3ad73edf3dddabb0848bf9981f81089c}{\index{\-Snake@{\-Snake}!go\-Up@{go\-Up}}
+\index{go\-Up@{go\-Up}!Snake@{\-Snake}}
+\subsubsection[{go\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-::go\-Up} (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{wrap\-Around}
+\end{DoxyParamCaption}
+)}}\label{classSnake_a3ad73edf3dddabb0848bf9981f81089c}
+
+
+\-Moves the whole \hyperlink{classSnake}{\-Snake} up one block and changes image to going up image, unless the \hyperlink{classSnake}{\-Snake} is going down and bigger than 1 \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-The user press \-Up arrow or the last valid direction was up. \-Postcondition\-: the whole \hyperlink{classSnake}{\-Snake} will be moved up one block. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \&wrap\-Around} & \-If true, allows wrap around. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnake_a30c2dd4b32595e3bc464229be093b9b0}{\index{\-Snake@{\-Snake}!hits\-Wall@{hits\-Wall}}
+\index{hits\-Wall@{hits\-Wall}!Snake@{\-Snake}}
+\subsubsection[{hits\-Wall}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Snake\-::hits\-Wall} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnake_a30c2dd4b32595e3bc464229be093b9b0}
+
+
+\-Checks if \hyperlink{classSnake}{\-Snake} head collided with the wall (off the screen). \-Precondition\-: \-Wrap around is disabled and the \hyperlink{classSnake}{\-Snake} moved. \-Postcondition\-: \-Returns \-True, if the \hyperlink{classSnake}{\-Snake} head collided with the wall. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \hyperlink{classSnake}{\-Snake} head collided the wall. 
+\end{DoxyReturn}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Snake_8h}{\-Snake.\-h}\item 
+\hyperlink{Snake_8cpp}{\-Snake.\-cpp}\end{DoxyCompactItemize}

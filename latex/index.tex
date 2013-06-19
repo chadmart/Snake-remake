@@ -1,0 +1,303 @@
+\begin{DoxyAuthor}{\-Author}
+\-Chad \-Martin
+\end{DoxyAuthor}
+
+
+ \hypertarget{index_Overview}{}\section{\-Purpose/\-Overview}\label{index_Overview}
+\-The program starts out by displaying intro screen 1 which asks the user for a number from 1 to 5 which correlates to the speed of the snake and the points multiplier. 1 is the slowest speed and 5 is the fastest speed. \-The faster the speed the bigger the points multiplier. 
+
+\-Next intro screen 2 is displayed, the user is asked if he/she would like to enable wrap around. \-If wrap around is enabled, the snake is allowed to go through the borders. \-If wrap around is disabled and the snake hits the borders, it will cause a game over. \-Also, \-If wrap around is disabled, the points multiplier is doubled. 
+
+\-After the game options are set, the game starts at 0 points with 2 pieces on the screen. \-One of the pieces is a \hyperlink{classSnakeBlock}{\-Snake\-Block} head. \-This piece is the snake that the user controls with the arrow keys. \-The other piece is a green \-Apple logo. \-This piece is a normal piece of food. \-When the snake collides with the normal piece of food, the snake will grow 1 block and the points will increase by 7 times the points multiplier. \-After the collision, the food will spawn in a new random location. \-Also in the window, there is an i\-Phone. \-This is the border around the screen. \-On the status bar of the i\-Phone, the points that the user has accumulated are displayed. \-If the snake head runs over another part of the snake, it will always cause a game over. \-If wrap around is disabled and the snake hits the border, it will cause a game over. 
+
+\-Another piece that can spawn is a \-Windows 8 logo. \-This piece is a special piece of food. \-When the snake collides with the special piece of food, the game will go into a blue screen of death. \-This piece will spawn every ten grows or if ‘\-W’ is pressed. 
+
+\-Another piece that can spawn is a \-Linux logo. \-This piece is the winning piece of food. \-When the snake collides with the winning piece of food, the game will end and a victory screen will appear. \-This piece will spawn after the special piece of food is painted in 100 paint events or if ‘\-L’ is pressed. 
+
+\-When a blue screen of death occurs, the game stops, the users points are set to zero, and a blue screen of death is displayed. \-After any key is pressed the game moves on to the game over screen. 
+
+\-When a game over occurs, the game stops and the game over screen is displayed. \-On the game over screen, the words game over, the total number of points, and instructions for the user to play again are displayed. \-If the user presses the \-Space bar, the game starts over and intro screen 1 is displayed. 
+
+\-When a victory occurs, the game stops and the victory screen is displayed. \-On the victory screen, the words victory, the total number of points, and instructions for the user to play again are displayed. \-If the user presses the \-Space bar, the game starts over and intro screen 1 is displayed. 
+
+\-If the user presses \-E\-S\-C at any time during the program, the program will quit.
+
+
+
+ \hypertarget{index_Requirements}{}\section{\-Requirements}\label{index_Requirements}
+\-Entertain the user through playing the game. \-Find the \-Linux logo and eat it to win the game.
+
+
+
+ \hypertarget{index_Instructions}{}\section{\-Instructions}\label{index_Instructions}
+\-In order to compile this program,
+\begin{DoxyItemize}
+\item extract files from \-Chad\-Mart\-\_\-\-H\-W2.\-zip
+\item navigate to the `/hw2/ directory
+\item enter “qmake -\/project” in terminal
+\item enter “qmake” in terminal
+\item enter “make” in terminal
+\end{DoxyItemize}
+
+\-In order to run this program,
+\begin{DoxyItemize}
+\item enter “./hw2” in terminal
+\end{DoxyItemize}
+
+\-Program library dependencies
+\begin{DoxyItemize}
+\item \-Q\-T library
+\begin{DoxyItemize}
+\item $<$\-Q\-Desktop\-Widget$>$
+\item $<$\-Q\-Application$>$
+\item $<$\-Q\-Widget$>$
+\item $<$\-Q\-Key\-Event$>$
+\item $<$\-Q\-Image$>$
+\item $<$\-Q\-Rect$>$
+\item $<$\-Q\-Painter$>$
+\end{DoxyItemize}
+\item \-C \-Standard \-General \-Utilities \-Library
+\begin{DoxyItemize}
+\item $<$stdlib.\-h$>$
+\end{DoxyItemize}
+\item vector \-Library
+\begin{DoxyItemize}
+\item $<$vector$>$
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+
+ \hypertarget{index_Classes}{}\section{\-Classes}\label{index_Classes}
+
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game}
+\item \hyperlink{classSnake}{\-Snake}
+\item \hyperlink{classSnakeBlock}{\-Snake\-Block}
+\item \hyperlink{classFood}{\-Food}
+\begin{DoxyItemize}
+\item \hyperlink{classSpecialFood}{\-Special\-Food}
+\item \hyperlink{classFoodWinner}{\-Food\-Winner}
+\end{DoxyItemize}
+\item \hyperlink{classIphone}{\-Iphone}
+\end{DoxyItemize}
+
+
+
+ \hypertarget{index_Global_functions}{}\section{\-Global Data/\-Functions}\label{index_Global_functions}
+
+\begin{DoxyItemize}
+\item \-Global \-Functions
+\begin{DoxyItemize}
+\item void center (\-Q\-Widget \&widget)
+\begin{DoxyItemize}
+\item \-Sets up window size and centers window on screen.
+\item \-Precondition\-: \-Program has started.
+\item \-Postcondition\-: \hyperlink{classGame}{\-Game} window is displayed on center of screen.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+
+ \hypertarget{index_High-level_Architecture}{}\section{\-High-\/level Architecture}\label{index_High-level_Architecture}
+\-When the program starts, the \-Q\-T window is initialized and the basic window settings are set such as the size of the window. \-Then \hyperlink{classGame}{\-Game} is launched. \-Next, the required objects are created from the following classes\-: \hyperlink{classSnake}{\-Snake}, \hyperlink{classFood}{\-Food}, \hyperlink{classSpecialFood}{\-Special\-Food}, \-Winning\-Food, and i\-Phone. \-When an object of the \hyperlink{classSnake}{\-Snake} class is created, a vector of \hyperlink{classSnakeBlock}{\-Snake\-Block} objects is created. \-After that, the paint event is called which displays intro screen 1. \-The user is asked to select the speed which will set the timer delay and the points multiplier. \-Once the user makes a selection, another paint event is called which displays intro screen 2. \-During intro screen 2, the user is asked to whether to enable or disable wrap around which will set wraparound to \-T\-R\-U\-E or \-F\-A\-L\-S\-E. \-Once the user makes a selection, start\-Game is called which starts the timer, resets data members to default values, deletes \hyperlink{classSnake}{\-Snake}, creates a new \hyperlink{classSnake}{\-Snake} dynamically, and moves food using move\-Food and check\-Bad\-Food methods of the \hyperlink{classFood}{\-Food} class. \-Then, another paint event is called which displays the game play screen. 
+
+\-Now, the game begins. \-Once the user presses an arrow key, the snake begins to move by the auto\-Move method of the \hyperlink{classSnake}{\-Snake} class and collision detection occurs after each time the snake moves by the check\-Collision method of the game class. \-If during check\-Collision the snake makes an illegal collision, then the game\-Over function is called and the game either restarts or the program terminates. \-If during check\-Collision the snake collides with an \-Apple logo, the snake grows 1 \hyperlink{classSnakeBlock}{\-Snake\-Block} using snake-\/$>$grow and points are added to points. \-If during check\-Collision the snake collides with a \-Windows 8 logo, the blue\-Screen\-Death function is called which displays the bsod. \-If during check\-Collision the snake collides with a \-Linux logo, the victory screen is displayed using the victory function. \-If the user presses ‘\-P’, pause\-Game function is called and game is paused. 
+
+\-If the user presses \-E\-S\-C at any time, q\-App-\/$>$exit function is called and program is terminated. 
+
+\-If the user presses ‘\-R’ at any time, stop\-Game function is called, intro\-Prompt1 is set to true, and intro screen 1 is displayed.
+
+
+
+ \hypertarget{index_UI}{}\section{\-User Interface}\label{index_UI}
+\-Universal \-Controls
+\begin{DoxyItemize}
+\item \-Esc key is pressed
+\begin{DoxyItemize}
+\item \-Exits app
+\end{DoxyItemize}
+\item '\-R' key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} is reset
+\item \-Intro \-Screen 1 is displayed
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\-Intro \-Screen 1 
+
+\-Intro \-Screen 1 \-Controls
+\begin{DoxyItemize}
+\item '1' key is pressed
+\begin{DoxyItemize}
+\item point\-Multi = 1;
+\item speed\-Delay = 200;
+\item \-Intro \-Screen 2 is displayed
+\end{DoxyItemize}
+\item '2' key is pressed
+\begin{DoxyItemize}
+\item point\-Multi = 2;
+\item speed\-Delay = 169;
+\item \-Intro \-Screen 2 is displayed
+\end{DoxyItemize}
+\item '3' key is pressed
+\begin{DoxyItemize}
+\item point\-Multi = 3;
+\item speed\-Delay = 138;
+\item \-Intro \-Screen 2 is displayed
+\end{DoxyItemize}
+\item '4' key is pressed
+\begin{DoxyItemize}
+\item point\-Multi = 4;
+\item speed\-Delay = 107;
+\item \-Intro \-Screen 2 is displayed
+\end{DoxyItemize}
+\item '5' key is pressed
+\begin{DoxyItemize}
+\item point\-Multi = 5;
+\item speed\-Delay = 75;
+\item \-Intro \-Screen 2 is displayed
+\end{DoxyItemize}
+\item '9' key is pressed
+\begin{DoxyItemize}
+\item point\-Multi = 1000;
+\item speed\-Delay = 0;
+\item \-Intro \-Screen 2 is displayed
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\-Intro \-Screen 2 
+
+\-Intro \-Screen 2 \-Controls
+\begin{DoxyItemize}
+\item '\-Y' key is pressed
+\begin{DoxyItemize}
+\item wrap\-Around = \-T\-R\-U\-E;
+\item \hyperlink{classGame}{\-Game} is started
+\end{DoxyItemize}
+\item '\-N' key is pressed
+\begin{DoxyItemize}
+\item wrap\-Around = \-F\-A\-L\-S\-E;
+\item \hyperlink{classGame}{\-Game} is started
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\hyperlink{classGame}{\-Game} \-Over \-Screen 
+
+\hyperlink{classGame}{\-Game} \-Over \-Screen \-Controls
+\begin{DoxyItemize}
+\item \-Space bar
+\begin{DoxyItemize}
+\item \-Intro \-Screen 1 is displayed
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\-Victory \-Screen 
+
+\-Victory \-Screen \-Controls
+\begin{DoxyItemize}
+\item \-Space bar is pressed
+\begin{DoxyItemize}
+\item \-Intro \-Screen 1 is displayed
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\-Blue \-Screen of \-Death 
+
+\-Blue \-Screen of \-Death \-Controls
+\begin{DoxyItemize}
+\item \-Any key is pressed, expect '\-R' or \-E\-S\-C
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} \-Over \-Screen is displayed
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\hyperlink{classGame}{\-Game} \-Play \-Screen 
+
+\hyperlink{classGame}{\-Game} \-Play \-Controls
+\begin{DoxyItemize}
+\item \-Normal \hyperlink{classGame}{\-Game} \-Play \-Controls
+\begin{DoxyItemize}
+\item \-Right arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classSnake}{\-Snake} moves right
+\end{DoxyItemize}
+\item \-Left arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classSnake}{\-Snake} moves left
+\end{DoxyItemize}
+\item \-Up arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classSnake}{\-Snake} moves up
+\end{DoxyItemize}
+\item \-Down arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classSnake}{\-Snake} moves down
+\end{DoxyItemize}
+\item '\-P' key is pressed
+\begin{DoxyItemize}
+\item \-Pauses game (\hyperlink{classSnake}{\-Snake} stops moving)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item \-Paused \hyperlink{classGame}{\-Game} \-Play \-Controls
+\begin{DoxyItemize}
+\item \-Right arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} resumes
+\item \hyperlink{classSnake}{\-Snake} moves right
+\end{DoxyItemize}
+\item \-Left arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} resumes
+\item \hyperlink{classSnake}{\-Snake} moves left
+\end{DoxyItemize}
+\item \-Up arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} resumes
+\item \hyperlink{classSnake}{\-Snake} moves up
+\end{DoxyItemize}
+\item \-Down arrow key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} resumes
+\item \hyperlink{classSnake}{\-Snake} moves down
+\end{DoxyItemize}
+\item '\-P' key is pressed
+\begin{DoxyItemize}
+\item \hyperlink{classGame}{\-Game} resumes
+\item \hyperlink{classSnake}{\-Snake} moves in the last direction
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item \-Cheat \-Codes (\-Only active during \-Normal \hyperlink{classGame}{\-Game} \-Play)
+\begin{DoxyItemize}
+\item '\-M' key or '\-A' key is pressed
+\begin{DoxyItemize}
+\item switches food images
+\item \-Moves the apple
+\end{DoxyItemize}
+\item '\-G' key is pressed
+\begin{DoxyItemize}
+\item \-Grows snake, but doesn't increase points
+\end{DoxyItemize}
+\item '\-W' key is pressed
+\begin{DoxyItemize}
+\item \-Moves special\-Food (the \-Windows 8 logo)
+\item \-Paints special\-Food
+\end{DoxyItemize}
+\item '8' key is pressed
+\begin{DoxyItemize}
+\item \-Displays blue screen of death
+\item \-Causes \-B\-S\-O\-D \hyperlink{classGame}{\-Game} \-Over
+\end{DoxyItemize}
+\item '\-L' key is pressed
+\begin{DoxyItemize}
+\item \-Moves food\-Winner (the \-Linux logo)
+\item \-Paints food\-Winner
+\end{DoxyItemize}
+\item '\-V' key is pressed
+\begin{DoxyItemize}
+\item \-Displays \-Victory screen
+\item \-Causes \-Victory 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}

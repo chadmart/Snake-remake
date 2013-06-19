@@ -1,0 +1,282 @@
+\hypertarget{classGame}{\section{\-Game \-Class \-Reference}
+\label{classGame}\index{\-Game@{\-Game}}
+}
+
+
+\-The \hyperlink{classSnake}{\-Snake} \hyperlink{classGame}{\-Game} \-Logic. \-This class contains the logic that makes up the \hyperlink{classSnake}{\-Snake} \hyperlink{classGame}{\-Game}.  
+
+
+
+
+{\ttfamily \#include $<$\-Game.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGame_ae3c64a8dd73de0a99849db8ec0e9a86c}{\hyperlink{classGame_ae3c64a8dd73de0a99849db8ec0e9a86c}{\-Game} (\-Q\-Widget $\ast$parent=0)}\label{classGame_ae3c64a8dd73de0a99849db8ec0e9a86c}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Constructor -\/ initializes the data members to default values and creates dynamically allocated memory. \-Precondition\-: \hyperlink{classGame}{\-Game} object has been created. \-Postcondition\-: \-Intro screen 1 is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\-Game} ()}\label{classGame_ae3d112ca6e0e55150d2fdbc704474530}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Destructor -\/ \-Deletes dynamically allocated objects (special\-Food, food\-Winner, food, and snake). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGame_a5c408cb3451b941a5d86757096086f95}{paint\-Event} (\-Q\-Paint\-Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em \-Paints the necessary object on the screen. \-Precondition\-: a \-Q\-Paint\-Event is called. \-Postcondition\-: \-Necessary objects are painted on the screen. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a6a870e7567a5d57e4060d8140644a01b}{timer\-Event} (\-Q\-Timer\-Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em \-Occurs when ever a timer event is called. \-Precondition\-: a \-Q\-Timer\-Event is called. \-Postcondition\-: \-If game is started and the direction has not changed, then the \hyperlink{classSnake}{\-Snake} is moved and collsion detection is run (check\-Collision is called). \-Next, changed\-Dir is set to false and \-Q\-Paint\-Event (repaint) is called. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a08d72c91a6daedc8fa48194253f5e567}{key\-Press\-Event} (\-Q\-Key\-Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em \-Carries out the required actions for the specific key. \-Precondition\-: a \-Q\-Key\-Event is called. (a key is pressed) \-Postcondition\-: \-Actions for specified key are carried out. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ae8638ccdb0ef3bf39a6affa30aa1258f}{void \hyperlink{classGame_ae8638ccdb0ef3bf39a6affa30aa1258f}{start\-Game} ()}\label{classGame_ae8638ccdb0ef3bf39a6affa30aa1258f}
+
+\begin{DoxyCompactList}\small\item\em \-If game is not started, resets data members to default values, deletes \hyperlink{classSnake}{\-Snake}, creates a new \hyperlink{classSnake}{\-Snake} to default length and position, and moves food. \-Precondition\-: \hyperlink{classGame}{\-Game} is not started and a '\-Y' or '\-N' was pressed during intro \-Screen 2. \-Postcondition\-: \hyperlink{classGame}{\-Game} is started and \hyperlink{classSnake}{\-Snake} is centered on screen. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a9d9a79a0f7df3c7e55a3103c04ecbc87}{void \hyperlink{classGame_a9d9a79a0f7df3c7e55a3103c04ecbc87}{pause\-Game} ()}\label{classGame_a9d9a79a0f7df3c7e55a3103c04ecbc87}
+
+\begin{DoxyCompactList}\small\item\em \-Pauses and \-Unpauses a started game. \-Precondition\-: \hyperlink{classGame}{\-Game} is started and '\-P' is pressed, or \hyperlink{classGame}{\-Game} is paused and '\-P' or a directional key is pressed. \-Postcondition\-: \-If game is started, the game is paused. \-If game is paused, game is unpaused. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a9ec1a0c5ee8b5e06fa429162b5e73564}{void \hyperlink{classGame_a9ec1a0c5ee8b5e06fa429162b5e73564}{stop\-Game} ()}\label{classGame_a9ec1a0c5ee8b5e06fa429162b5e73564}
+
+\begin{DoxyCompactList}\small\item\em \-Stops the game and the timer, sets up variables to paint the game\-Over\-Screen, and calls a paint event. \-Precondition\-: \hyperlink{classSnake}{\-Snake} makes an illegal collision or any key is pressed during the \-Blue \-Screen of \-Death. \-Postcondition\-: \-The paint event will display the game\-Over\-Screen. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a6a02e00bf61930576156c6c59b817a25}{void \hyperlink{classGame_a6a02e00bf61930576156c6c59b817a25}{victory} ()}\label{classGame_a6a02e00bf61930576156c6c59b817a25}
+
+\begin{DoxyCompactList}\small\item\em \-Stops the game and the timer, sets up variables to paint the victory\-Screen, and calls a paint event. \-Precondition\-: \-If snake collides with food\-Winner, game is started and '\-V' is pressed, or grow\-Count == 315. \-Postcondition\-: \-The paint event will display the victory\-Screen. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a21cdf5a4c8decb922bbb17ae6e55f636}{void \hyperlink{classGame_a21cdf5a4c8decb922bbb17ae6e55f636}{blue\-Screen\-Death} ()}\label{classGame_a21cdf5a4c8decb922bbb17ae6e55f636}
+
+\begin{DoxyCompactList}\small\item\em \-Stops the timer, sets up variables to paint the \-Blue \-Screen of \-Death, sets points to zero, and calls a paint event. \-Precondition\-: \-If snake collides with special\-Food, or game is started and '8' is pressed. \-Postcondition\-: \-Points are set to zero and the paint event will display the \-Blue \-Screen of \-Death. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a878615d81c26a1c5b62992f741f63e6d}{game\-Over\-Screen} (\-Q\-Painter \&painter)
+\begin{DoxyCompactList}\small\item\em \-The screen that is displayed when a \hyperlink{classGame}{\-Game} \-Over occurs. \-Precondition\-: \-Paint event is called and game\-Over is true. \-Postcondition\-: game\-Over\-Screen is displayed. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_acdc0eaef5b29ea5d73edf8c908cf8dc7}{victory\-Screen} (\-Q\-Painter \&painter)
+\begin{DoxyCompactList}\small\item\em \-The screen that is displayed when a \-Victory occurs. \-Precondition\-: \-Paint event is called and game\-Won is true. \-Postcondition\-: victory\-Screen is displayed. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_ad8ec719e40e94a3a1a059fd2f25b5dd1}{get\-Points} (\-Q\-Painter \&painter)
+\begin{DoxyCompactList}\small\item\em \-Paints points on the status bar on the iphone. \-Precondition\-: \-Paint event is called and either game\-Started or \-B\-S\-O\-D is true. \-Postcondition\-: \-Points are displayed on status bar of iphone. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a34e40db4bb49df422db3b120de17e5b6}{intro\-Screen} (\-Q\-Painter \&painter)
+\begin{DoxyCompactList}\small\item\em \-Paints the intro screens on the screen of the iphone. \-Precondition\-: \-Paint event is called and either intro\-Prompt1 or intro\-Prompt2 is true. \-Postcondition\-: \-Either intro screen 1 or intro screen 2 is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a71802e92f514d4b79f3168b70d7217a6}{void \hyperlink{classGame_a71802e92f514d4b79f3168b70d7217a6}{check\-Collision} ()}\label{classGame_a71802e92f514d4b79f3168b70d7217a6}
+
+\begin{DoxyCompactList}\small\item\em \-Carries out actions if snake collided with something. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} is moved by a directional key press or a timer event. \-Postcondition\-: \-Specific action carried out according to what the snake collided with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGame_ac6002315e7c8ba1da4fe7a763fe442b2}{\hyperlink{classSnake}{\-Snake} $\ast$ \hyperlink{classGame_ac6002315e7c8ba1da4fe7a763fe442b2}{snake}}\label{classGame_ac6002315e7c8ba1da4fe7a763fe442b2}
+
+\begin{DoxyCompactList}\small\item\em \-The infinitely growing snake. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a9af4c00a595db1e8a377189fbfdfdbcd}{\hyperlink{classFood}{\-Food} $\ast$ \hyperlink{classGame_a9af4c00a595db1e8a377189fbfdfdbcd}{food}}\label{classGame_a9af4c00a595db1e8a377189fbfdfdbcd}
+
+\begin{DoxyCompactList}\small\item\em \-The normal piece of \hyperlink{classFood}{\-Food}, red or green apple logo. \-If the \hyperlink{classSnake}{\-Snake} eats this \hyperlink{classFood}{\-Food}, the \hyperlink{classSnake}{\-Snake} will grow one \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\item 
+\hypertarget{classGame_aad79a1e2a336f39acefdc46bd091110b}{\hyperlink{classSpecialFood}{\-Special\-Food} $\ast$ \hyperlink{classGame_aad79a1e2a336f39acefdc46bd091110b}{special\-Food}}\label{classGame_aad79a1e2a336f39acefdc46bd091110b}
+
+\begin{DoxyCompactList}\small\item\em \-The special piece of \hyperlink{classFood}{\-Food}, \-The \-Windows 8 logo. \-If the \hyperlink{classSnake}{\-Snake} eats this \hyperlink{classFood}{\-Food}, the game will go into a \-Blue \-Screen of \-Death \hyperlink{classGame}{\-Game} over in which the user loses all points. \-This will spawn every ten grows for 100 paint events. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ad5fae274ed08a2f7e2e940f28c4dcafe}{\hyperlink{classFoodWinner}{\-Food\-Winner} $\ast$ \hyperlink{classGame_ad5fae274ed08a2f7e2e940f28c4dcafe}{food\-Winner}}\label{classGame_ad5fae274ed08a2f7e2e940f28c4dcafe}
+
+\begin{DoxyCompactList}\small\item\em \-The winning piece of \hyperlink{classFood}{\-Food}, \-The \-Linux logo. \-If the \hyperlink{classSnake}{\-Snake} eats this \hyperlink{classFood}{\-Food}, the game will go into a \-Victory \-Screen in which the game ends and a special screen is displayed. \-This will spawn after the special\-Food has been painted 100 times. \-It will be painted for 100 paint events, and then disappear. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a096ce28dfd515112ffac0a6b25a7b969}{\hyperlink{classIphone}{\-Iphone} \hyperlink{classGame_a096ce28dfd515112ffac0a6b25a7b969}{iphone}}\label{classGame_a096ce28dfd515112ffac0a6b25a7b969}
+
+\begin{DoxyCompactList}\small\item\em \-The \hyperlink{classIphone}{\-Iphone} border around the game. \end{DoxyCompactList}\item 
+\hypertarget{classGame_aceecf6c9057f65306e5086644d3a621f}{int \hyperlink{classGame_aceecf6c9057f65306e5086644d3a621f}{timer\-Id}}\label{classGame_aceecf6c9057f65306e5086644d3a621f}
+
+\begin{DoxyCompactList}\small\item\em \-The unique timer identifier that is returned from start\-Timer(). \-It is passed to kill\-Timer(int id) in order to stop the timer. \end{DoxyCompactList}\item 
+\hypertarget{classGame_aba9da13645292bf746be23ea698c1919}{int \hyperlink{classGame_aba9da13645292bf746be23ea698c1919}{speed\-Delay}}\label{classGame_aba9da13645292bf746be23ea698c1919}
+
+\begin{DoxyCompactList}\small\item\em \-The timer delay that controls the speed. \-It is passed to start\-Timer() in order to start the timer. \end{DoxyCompactList}\item 
+\hypertarget{classGame_acf48e7c6cc26020e3cb205a0aebd63bd}{unsigned int \hyperlink{classGame_acf48e7c6cc26020e3cb205a0aebd63bd}{points}}\label{classGame_acf48e7c6cc26020e3cb205a0aebd63bd}
+
+\begin{DoxyCompactList}\small\item\em \-The number of points the user has accumulated. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a937bcfe7d65bcec1849b70a1ed0f9b30}{unsigned int \hyperlink{classGame_a937bcfe7d65bcec1849b70a1ed0f9b30}{point\-Multi}}\label{classGame_a937bcfe7d65bcec1849b70a1ed0f9b30}
+
+\begin{DoxyCompactList}\small\item\em \-The points multiplier, this variable will be multiplied with the points that the user earns during each grow. \-The \-User sets this variable during 1st intro screens. \end{DoxyCompactList}\item 
+\hypertarget{classGame_af942acedb59e3d6a9a57565f28aa312d}{bool \hyperlink{classGame_af942acedb59e3d6a9a57565f28aa312d}{wrap\-Around}}\label{classGame_af942acedb59e3d6a9a57565f28aa312d}
+
+\begin{DoxyCompactList}\small\item\em \-This control what logic is used when the \hyperlink{classSnake}{\-Snake} hits the wall. \-The \-User sets this variable during 2nd intro screens. \-If \-False, a game over will occur when the \hyperlink{classSnake}{\-Snake} hits the wall. \-If \-True, the \hyperlink{classSnake}{\-Snake} will wrap around to the other side of the screen when it hits the wall. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a5dc3b4a5881de404704396843f240407}{bool \hyperlink{classGame_a5dc3b4a5881de404704396843f240407}{intro\-Prompt1}}\label{classGame_a5dc3b4a5881de404704396843f240407}
+
+\begin{DoxyCompactList}\small\item\em \-Controls when intro prompt 1 is displayed, and what actions to take, when intro prompt 1, is displayed during a key press event. \end{DoxyCompactList}\item 
+\hypertarget{classGame_aff3156d47d93ce108ee1d25da3ceea3c}{bool \hyperlink{classGame_aff3156d47d93ce108ee1d25da3ceea3c}{intro\-Prompt2}}\label{classGame_aff3156d47d93ce108ee1d25da3ceea3c}
+
+\begin{DoxyCompactList}\small\item\em \-Controls when intro prompt 2 is displayed, and what actions to take, when intro prompt 2 is displayed, during a key press event. \end{DoxyCompactList}\item 
+\hypertarget{classGame_af3d6a9c87d9278503529d5b62dba4077}{bool \hyperlink{classGame_af3d6a9c87d9278503529d5b62dba4077}{game\-Started}}\label{classGame_af3d6a9c87d9278503529d5b62dba4077}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not the game is started. \-True when game is started, otherwise \-False. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a21f9857b2d4b38b97ec90b9c2ce3413d}{bool \hyperlink{classGame_a21f9857b2d4b38b97ec90b9c2ce3413d}{game\-Over}}\label{classGame_a21f9857b2d4b38b97ec90b9c2ce3413d}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not a game over has occured. \-True when a game over has occur, otherwise \-False. \-Controls when \hyperlink{classGame}{\-Game} \-Over \-Screen is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a55d6d8def7c867d94f8ae820884f1aff}{bool \hyperlink{classGame_a55d6d8def7c867d94f8ae820884f1aff}{game\-Won}}\label{classGame_a55d6d8def7c867d94f8ae820884f1aff}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not a victory (the game has been won) has occured. \-True when a victory has occured, otherwise \-False. \-Controls when \-Victory \-Screen is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a2988aab32f3a086595ba3d1d675d9bee}{bool \hyperlink{classGame_a2988aab32f3a086595ba3d1d675d9bee}{game\-Ended}}\label{classGame_a2988aab32f3a086595ba3d1d675d9bee}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not a victory or a game over has occured. \-True when a victory or a game over has occured, otherwise \-False. \-Controls what actions to take during a key press event, when a victory or a game over has occured. \end{DoxyCompactList}\item 
+\hypertarget{classGame_aea8eb9e9304b43e6ecc2c4a0377d3155}{bool \hyperlink{classGame_aea8eb9e9304b43e6ecc2c4a0377d3155}{b\-S\-O\-D}}\label{classGame_aea8eb9e9304b43e6ecc2c4a0377d3155}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not a \-Blue screen of death has occured. \-True when a \-Blue screen of death has occured, otherwise \-False. \-Controls when \-Blue screen of death is displayed, and what actions to take, when \-Blue screen of death is displayed, during a key press event. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a255049de8fb46a9f00946631e3121c03}{bool \hyperlink{classGame_a255049de8fb46a9f00946631e3121c03}{paused}}\label{classGame_a255049de8fb46a9f00946631e3121c03}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not the game is paused. \-True when the game is paused, otherwise \-False. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a505ba53ef639736e8a4edb222de00f82}{bool \hyperlink{classGame_a505ba53ef639736e8a4edb222de00f82}{changed\-Dir}}\label{classGame_a505ba53ef639736e8a4edb222de00f82}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not the snake has changed directions before the last tiemr event. \-True when the snake has changed directions before the last timer event, otherwise \-False. \end{DoxyCompactList}\item 
+\hypertarget{classGame_af62d7b5c18f6cdd90dd80f98cb783bd9}{char \hyperlink{classGame_af62d7b5c18f6cdd90dd80f98cb783bd9}{last\-Dir}}\label{classGame_af62d7b5c18f6cdd90dd80f98cb783bd9}
+
+\begin{DoxyCompactList}\small\item\em \-Stores the last valid direction of the \hyperlink{classSnake}{\-Snake}. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ae2a3b6bed2a17912ba8722958d5e0caa}{unsigned int \hyperlink{classGame_ae2a3b6bed2a17912ba8722958d5e0caa}{grow\-Count}}\label{classGame_ae2a3b6bed2a17912ba8722958d5e0caa}
+
+\begin{DoxyCompactList}\small\item\em \-The number of times the snake has grown. \-Controls when to start displaying special\-Food. \-Once grow\-Count \% 10 == 0, special\-Food is painted. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ac0bd70f6892c174d1d7c65150e9c6fb5}{unsigned int \hyperlink{classGame_ac0bd70f6892c174d1d7c65150e9c6fb5}{spawn\-Winner\-Count}}\label{classGame_ac0bd70f6892c174d1d7c65150e9c6fb5}
+
+\begin{DoxyCompactList}\small\item\em \-The number of times the special food has been painted. \-Controls when ro start displaying food\-Winner. \-Once spawn\-Winner\-Count \% 1000 == 0, food\-Winner is painted. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a4807181a3e27197af61277273aae86b4}{bool \hyperlink{classGame_a4807181a3e27197af61277273aae86b4}{death\-Spawn}}\label{classGame_a4807181a3e27197af61277273aae86b4}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not the special\-Food will be painted. \-True when a special\-Food will be painted, otherwise \-False. \-Controls when special\-Food is displayed, and what actions to take, when special\-Food is displayed, during a key press event or during check\-Collision. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a5c937032c95deccc527887635cc2ac57}{bool \hyperlink{classGame_a5c937032c95deccc527887635cc2ac57}{win\-Spawn}}\label{classGame_a5c937032c95deccc527887635cc2ac57}
+
+\begin{DoxyCompactList}\small\item\em \-Whether or not the food\-Winner will be painted. \-True when a food\-Winner will be painted, otherwise \-False. \-Controls when food\-Winner is displayed, and what actions to take, when food\-Winner is displayed, during a key press event or during check\-Collision. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a2f69ee950ab7ae5ac9df9549aac3458e}{int \hyperlink{classGame_a2f69ee950ab7ae5ac9df9549aac3458e}{death\-Counter}}\label{classGame_a2f69ee950ab7ae5ac9df9549aac3458e}
+
+\begin{DoxyCompactList}\small\item\em \-Increments everytime special\-Food is painted. \-Controls when to stop displaying special\-Food. \-Once death\-Counter \% 100 == 0, special\-Food is no longer painted. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ad1b4ed65c72b1b35259c52f0d7246dd5}{int \hyperlink{classGame_ad1b4ed65c72b1b35259c52f0d7246dd5}{win\-Counter}}\label{classGame_ad1b4ed65c72b1b35259c52f0d7246dd5}
+
+\begin{DoxyCompactList}\small\item\em \-Increments everytime food\-Winner is painted. \-Controls when to stop displaying food\-Winner. \-Once win\-Counter \% 100 == 0, food\-Winner is no longer painted. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a0b895214583cabcae16d9d1be5a00aab}{bool \hyperlink{classGame_a0b895214583cabcae16d9d1be5a00aab}{do\-One\-Time}}\label{classGame_a0b895214583cabcae16d9d1be5a00aab}
+
+\begin{DoxyCompactList}\small\item\em \-Controls whether or not to move and start displaying food\-Winner or special\-Food. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ab4986d9d9139d5438a086b406b4311e4}{bool \hyperlink{classGame_ab4986d9d9139d5438a086b406b4311e4}{fix\-Count}}\label{classGame_ab4986d9d9139d5438a086b406b4311e4}
+
+\begin{DoxyCompactList}\small\item\em \-Controls whether or not to fix the grow count, depending on the spawn of special\-Food. \end{DoxyCompactList}\item 
+\hypertarget{classGame_ae5a98023415893d7fb8876e6d6662466}{int \hyperlink{classGame_ae5a98023415893d7fb8876e6d6662466}{switch\-Food}}\label{classGame_ae5a98023415893d7fb8876e6d6662466}
+
+\begin{DoxyCompactList}\small\item\em \-Controls which apple is to be displayed. \-If 0, then green apple is displayed \-If 1, then red apple is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a04465acd56797ce91dd05167a6a094aa}{\-Q\-Image \hyperlink{classGame_a04465acd56797ce91dd05167a6a094aa}{blue\-Screen\-Image}}\label{classGame_a04465acd56797ce91dd05167a6a094aa}
+
+\begin{DoxyCompactList}\small\item\em \-This is the \-Q\-Image of the screen that will be displayed when the \hyperlink{classSnake}{\-Snake} eats a \-Windows 8 logo. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a56dc55af7346a05f0c5e63fc334a193b}{\-Q\-Rect \hyperlink{classGame_a56dc55af7346a05f0c5e63fc334a193b}{blue\-Screen\-Rect}}\label{classGame_a56dc55af7346a05f0c5e63fc334a193b}
+
+\begin{DoxyCompactList}\small\item\em \-This is the \-Q\-Rect of the screen that will be displayed when the \hyperlink{classSnake}{\-Snake} eats a \-Windows 8 logo. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a64ed5ba3c707a1bc23eeca263d8707f3}{\-Q\-Image \hyperlink{classGame_a64ed5ba3c707a1bc23eeca263d8707f3}{victory\-Screen\-Image}}\label{classGame_a64ed5ba3c707a1bc23eeca263d8707f3}
+
+\begin{DoxyCompactList}\small\item\em \-This is the \-Q\-Image of the screen that will be displayed when the \hyperlink{classSnake}{\-Snake} eats a \-Linux logo. \end{DoxyCompactList}\item 
+\hypertarget{classGame_a5917841987549510b5cb274727a8431e}{\-Q\-Rect \hyperlink{classGame_a5917841987549510b5cb274727a8431e}{victory\-Screen\-Rect}}\label{classGame_a5917841987549510b5cb274727a8431e}
+
+\begin{DoxyCompactList}\small\item\em \-This is the \-Q\-Rect of the screen that will be displayed when the \hyperlink{classSnake}{\-Snake} eats a \-Linux logo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The \hyperlink{classSnake}{\-Snake} \hyperlink{classGame}{\-Game} \-Logic. \-This class contains the logic that makes up the \hyperlink{classSnake}{\-Snake} \hyperlink{classGame}{\-Game}. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classGame_a878615d81c26a1c5b62992f741f63e6d}{\index{\-Game@{\-Game}!game\-Over\-Screen@{game\-Over\-Screen}}
+\index{game\-Over\-Screen@{game\-Over\-Screen}!Game@{\-Game}}
+\subsubsection[{game\-Over\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::game\-Over\-Screen} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Painter \&}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_a878615d81c26a1c5b62992f741f63e6d}
+
+
+\-The screen that is displayed when a \hyperlink{classGame}{\-Game} \-Over occurs. \-Precondition\-: \-Paint event is called and game\-Over is true. \-Postcondition\-: game\-Over\-Screen is displayed. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Q\-T} & \-Qpainter object reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_ad8ec719e40e94a3a1a059fd2f25b5dd1}{\index{\-Game@{\-Game}!get\-Points@{get\-Points}}
+\index{get\-Points@{get\-Points}!Game@{\-Game}}
+\subsubsection[{get\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::get\-Points} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Painter \&}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_ad8ec719e40e94a3a1a059fd2f25b5dd1}
+
+
+\-Paints points on the status bar on the iphone. \-Precondition\-: \-Paint event is called and either game\-Started or \-B\-S\-O\-D is true. \-Postcondition\-: \-Points are displayed on status bar of iphone. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Q\-T} & \-Qpainter object reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_a34e40db4bb49df422db3b120de17e5b6}{\index{\-Game@{\-Game}!intro\-Screen@{intro\-Screen}}
+\index{intro\-Screen@{intro\-Screen}!Game@{\-Game}}
+\subsubsection[{intro\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::intro\-Screen} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Painter \&}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_a34e40db4bb49df422db3b120de17e5b6}
+
+
+\-Paints the intro screens on the screen of the iphone. \-Precondition\-: \-Paint event is called and either intro\-Prompt1 or intro\-Prompt2 is true. \-Postcondition\-: \-Either intro screen 1 or intro screen 2 is displayed. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Q\-T} & \-Qpainter object reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_a08d72c91a6daedc8fa48194253f5e567}{\index{\-Game@{\-Game}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!Game@{\-Game}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::key\-Press\-Event} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_a08d72c91a6daedc8fa48194253f5e567}
+
+
+\-Carries out the required actions for the specific key. \-Precondition\-: a \-Q\-Key\-Event is called. (a key is pressed) \-Postcondition\-: \-Actions for specified key are carried out. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$event} & \-Q\-T event pointer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_a5c408cb3451b941a5d86757096086f95}{\index{\-Game@{\-Game}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!Game@{\-Game}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::paint\-Event} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Paint\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_a5c408cb3451b941a5d86757096086f95}
+
+
+\-Paints the necessary object on the screen. \-Precondition\-: a \-Q\-Paint\-Event is called. \-Postcondition\-: \-Necessary objects are painted on the screen. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$event} & \-Q\-T event pointer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_a6a870e7567a5d57e4060d8140644a01b}{\index{\-Game@{\-Game}!timer\-Event@{timer\-Event}}
+\index{timer\-Event@{timer\-Event}!Game@{\-Game}}
+\subsubsection[{timer\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::timer\-Event} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Timer\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_a6a870e7567a5d57e4060d8140644a01b}
+
+
+\-Occurs when ever a timer event is called. \-Precondition\-: a \-Q\-Timer\-Event is called. \-Postcondition\-: \-If game is started and the direction has not changed, then the \hyperlink{classSnake}{\-Snake} is moved and collsion detection is run (check\-Collision is called). \-Next, changed\-Dir is set to false and \-Q\-Paint\-Event (repaint) is called. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$event} & \-Q\-T event pointer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_acdc0eaef5b29ea5d73edf8c908cf8dc7}{\index{\-Game@{\-Game}!victory\-Screen@{victory\-Screen}}
+\index{victory\-Screen@{victory\-Screen}!Game@{\-Game}}
+\subsubsection[{victory\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Game\-::victory\-Screen} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Painter \&}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classGame_acdc0eaef5b29ea5d73edf8c908cf8dc7}
+
+
+\-The screen that is displayed when a \-Victory occurs. \-Precondition\-: \-Paint event is called and game\-Won is true. \-Postcondition\-: victory\-Screen is displayed. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Q\-T} & \-Qpainter object reference. \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Game_8h}{\-Game.\-h}\item 
+\hyperlink{Game_8cpp}{\-Game.\-cpp}\end{DoxyCompactItemize}

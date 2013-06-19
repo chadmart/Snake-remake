@@ -1,0 +1,48 @@
+#ifndef BLUESCREENDEATH_H
+#define BLUESCREENDEATH_H
+
+#include <QImage>
+#include <QRect>
+
+/*! \brief A Blue Screen of Death image and location of where to paint.*/
+class BlueScreenDeath
+{
+  	public:
+		/*! \brief Class Constructor - loads image, moves to specified location.
+		 * Precondition: A new instance of game was created.
+		 * Postcondition: A new BlueScreenDeath image is loaded and ready to be painted.*/
+    		BlueScreenDeath();
+
+		/*! \brief Class Destructor - Does Nothing*/
+    		~BlueScreenDeath();
+
+		/*! \brief Sets the location of the BlueScreenDeath image to be in the iphone
+		 * Precondition: A BlueScreenDeath object was created.
+		 * Postcondition: Location is set for the BlueScreenDeath.*/
+		void setPosition();
+
+		/*! \brief Returns rect of BlueScreenDeath.
+		 * Precondition: Any collision detection that involes the BlueScreenDeath occured.
+		 * Postcondition: The Qrect of the BlueScreenDeath is returned.
+		 * \return The rect of BlueScreenDeath.*/
+    		QRect getRect();
+
+
+		/*! \brief Returns image of BlueScreenDeath
+		 * Precondition: Instance of Game called a paint event and the BSOD is TRUE.
+		 * Postcondition: The image of the BlueScreenDeath will be painted on the screen.
+		 * \return Image of BlueScreenDeath*/
+    		QImage & getImage();
+
+	protected:
+
+		/*! \brief The QImage of BlueScreenDeath*/
+    		QImage image;
+
+		/*! \brief The QRect of BlueScreenDeath*/
+    		QRect rect;
+
+};
+
+#endif
+

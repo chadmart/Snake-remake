@@ -1,0 +1,244 @@
+\hypertarget{classSnakeBlock}{\section{\-Snake\-Block \-Class \-Reference}
+\label{classSnakeBlock}\index{\-Snake\-Block@{\-Snake\-Block}}
+}
+
+
+\-The \hyperlink{classSnakeBlock}{\-Snake\-Block} \-Represents one block of the \hyperlink{classSnake}{\-Snake}.  
+
+
+
+
+{\ttfamily \#include $<$\-Snake\-Block.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSnakeBlock_a7d24658fa97c3ba0ee5eed5fe1edc96e}{\-Snake\-Block} (int x\-Coord, int y\-Coord, int img\-Select)
+\begin{DoxyCompactList}\small\item\em \-Class \-Constructor -\/ \-Creates one \hyperlink{classSnakeBlock}{\-Snake\-Block} at the given postion with the specified image and initializes the data members to default values. \-Precondition\-: \-A new game was created or the \hyperlink{classSnake}{\-Snake} is growing bigger. \-Postcondition\-: \-A new \-Snakeblock is created and added to the \hyperlink{classSnake}{\-Snake}. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_a1fe79b21dd90c4477fdd55f152d2c989}{\hyperlink{classSnakeBlock_a1fe79b21dd90c4477fdd55f152d2c989}{$\sim$\-Snake\-Block} ()}\label{classSnakeBlock_a1fe79b21dd90c4477fdd55f152d2c989}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Destructor -\/ \-Does \-Nothing. \end{DoxyCompactList}\item 
+void \hyperlink{classSnakeBlock_a6e5291dffd6e314250491d531d35894a}{set\-Position} (int \hyperlink{classSnakeBlock_ae4bcb05c48c77bff73282652a5f91b42}{x}, int \hyperlink{classSnakeBlock_a25b60c36f8e84c5af37bdf48a078fec0}{y})
+\begin{DoxyCompactList}\small\item\em \-Moves the \hyperlink{classSnakeBlock}{\-Snake\-Block} to the given position. \-Precondition\-: \-A \hyperlink{classSnakeBlock}{\-Snake\-Block} object needed to be moved or placed on the screen. \-Postcondition\-: \-The \hyperlink{classSnakeBlock}{\-Snake\-Block} will be moved to the given position. \end{DoxyCompactList}\item 
+int \hyperlink{classSnakeBlock_a73a38f952998688e6c899ae1fcba4df9}{getx\-Pos} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Current x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Current x position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Current x position is returned. \end{DoxyCompactList}\item 
+int \hyperlink{classSnakeBlock_ab78190ae3b87cd4556b90aeaf8fab811}{gety\-Pos} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Current y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Current y position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Current y position is returned. \end{DoxyCompactList}\item 
+int \hyperlink{classSnakeBlock_a29958e8110acd215354f0b07cdd7c606}{getx\-Old\-Pos} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Previous x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Previous x position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Previous x position is returned. \end{DoxyCompactList}\item 
+int \hyperlink{classSnakeBlock_af012358864082101b782a694ae7863a8}{gety\-Old\-Pos} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Previous y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Previous y position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Previous y position is returned. \end{DoxyCompactList}\item 
+void \hyperlink{classSnakeBlock_a409a9f086ec935641087e498ff810bdd}{auto\-Move} (int px\-Coord, int py\-Coord)
+\begin{DoxyCompactList}\small\item\em \-Moves the \hyperlink{classSnakeBlock}{\-Snake\-Block} to the location the \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of it. \-Precondition\-: \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of this \hyperlink{classSnakeBlock}{\-Snake\-Block} was moved. \-Postcondition\-: \-This \hyperlink{classSnakeBlock}{\-Snake\-Block} has been moved to the location the \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of it. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnakeBlock_a0be7cbc3f967b97f72451c7ec60f48e2}{hits\-Wall} ()
+\begin{DoxyCompactList}\small\item\em \-Checks if \hyperlink{classSnakeBlock}{\-Snake\-Block} is off the screen (collided with the wall). \-Precondition\-: check\-Collision function in game was called and wrap around is disabled. \-Postcondition\-: \-If \-True, game\-Over will occur. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_af95102dd649562682283e7bbced6d432}{void \hyperlink{classSnakeBlock_af95102dd649562682283e7bbced6d432}{set\-Image\-Down} ()}\label{classSnakeBlock_af95102dd649562682283e7bbced6d432}
+
+\begin{DoxyCompactList}\small\item\em \-Switches the image of the \hyperlink{classSnakeBlock}{\-Snake\-Block} (\hyperlink{classSnake}{\-Snake} head only) to the going down image. \-Precondition\-: \hyperlink{classSnake}{\-Snake} changed direction to going down. \-Postcondition\-: \-The image of snakeblockdown.\-png is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_a146384071f87de9b6ea5a3bb4ea3fe58}{void \hyperlink{classSnakeBlock_a146384071f87de9b6ea5a3bb4ea3fe58}{set\-Image\-Up} ()}\label{classSnakeBlock_a146384071f87de9b6ea5a3bb4ea3fe58}
+
+\begin{DoxyCompactList}\small\item\em \-Switches the image of the \hyperlink{classSnakeBlock}{\-Snake\-Block} (\hyperlink{classSnake}{\-Snake} head only) to the going up image. \-Precondition\-: \hyperlink{classSnake}{\-Snake} changed direction to going up. \-Postcondition\-: \-The image of snakeblockup.\-png is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_a3da49d8a5ffd258bffecd0690952590e}{void \hyperlink{classSnakeBlock_a3da49d8a5ffd258bffecd0690952590e}{set\-Image\-Left} ()}\label{classSnakeBlock_a3da49d8a5ffd258bffecd0690952590e}
+
+\begin{DoxyCompactList}\small\item\em \-Switches the image of the \hyperlink{classSnakeBlock}{\-Snake\-Block} (\hyperlink{classSnake}{\-Snake} head only) to the going left image. \-Precondition\-: \hyperlink{classSnake}{\-Snake} changed direction to going left. \-Postcondition\-: \-The image of snakeblockleft.\-png is displayed. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_ad68fd5ae96249925aa85cb76e616c143}{void \hyperlink{classSnakeBlock_ad68fd5ae96249925aa85cb76e616c143}{set\-Image\-Right} ()}\label{classSnakeBlock_ad68fd5ae96249925aa85cb76e616c143}
+
+\begin{DoxyCompactList}\small\item\em \-Switches the image of the \hyperlink{classSnakeBlock}{\-Snake\-Block} (\hyperlink{classSnake}{\-Snake} head only) to the going right image. \-Precondition\-: \hyperlink{classSnake}{\-Snake} changed direction to going right. \-Postcondition\-: \-The image of snakeblockright.\-png is displayed. \end{DoxyCompactList}\item 
+\-Q\-Rect \hyperlink{classSnakeBlock_af82087d3749a207105a1e76a6570f8c0}{get\-Rect} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the rect of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-Any collision detection or paint event that involes the \hyperlink{classSnakeBlock}{\-Snake\-Block} occured. \-Postcondition\-: \-The \-Qrect of the \hyperlink{classSnakeBlock}{\-Snake\-Block} is returned. \end{DoxyCompactList}\item 
+\-Q\-Image \& \hyperlink{classSnakeBlock_a3f50323a5a4f1991a91d8083bf522b01}{get\-Image} ()
+\begin{DoxyCompactList}\small\item\em \-Returns the image of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-Instance of \hyperlink{classGame}{\-Game} called a paint event and the game is started. \-Postcondition\-: \-The image of the \hyperlink{classSnakeBlock}{\-Snake\-Block} will be painted on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSnakeBlock_ae4bcb05c48c77bff73282652a5f91b42}{int \hyperlink{classSnakeBlock_ae4bcb05c48c77bff73282652a5f91b42}{x}}\label{classSnakeBlock_ae4bcb05c48c77bff73282652a5f91b42}
+
+\begin{DoxyCompactList}\small\item\em \-Current x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_a25b60c36f8e84c5af37bdf48a078fec0}{int \hyperlink{classSnakeBlock_a25b60c36f8e84c5af37bdf48a078fec0}{y}}\label{classSnakeBlock_a25b60c36f8e84c5af37bdf48a078fec0}
+
+\begin{DoxyCompactList}\small\item\em \-Current y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_a9d70e8dce83da65a6e4da496ad016b5c}{int \hyperlink{classSnakeBlock_a9d70e8dce83da65a6e4da496ad016b5c}{px}}\label{classSnakeBlock_a9d70e8dce83da65a6e4da496ad016b5c}
+
+\begin{DoxyCompactList}\small\item\em \-Previous x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_a85c5ad23c6297acf264ce5e5ca65ad69}{int \hyperlink{classSnakeBlock_a85c5ad23c6297acf264ce5e5ca65ad69}{py}}\label{classSnakeBlock_a85c5ad23c6297acf264ce5e5ca65ad69}
+
+\begin{DoxyCompactList}\small\item\em \-Previous y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_ad787df4e44374b9a5532128c497c16ff}{\-Q\-Image \hyperlink{classSnakeBlock_ad787df4e44374b9a5532128c497c16ff}{image}}\label{classSnakeBlock_ad787df4e44374b9a5532128c497c16ff}
+
+\begin{DoxyCompactList}\small\item\em \-The \-Q\-Image of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\item 
+\hypertarget{classSnakeBlock_ae042671c076c7ee164a6cec75b837d4a}{\-Q\-Rect \hyperlink{classSnakeBlock_ae042671c076c7ee164a6cec75b837d4a}{rect}}\label{classSnakeBlock_ae042671c076c7ee164a6cec75b837d4a}
+
+\begin{DoxyCompactList}\small\item\em \-The \-Q\-Rect of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The \hyperlink{classSnakeBlock}{\-Snake\-Block} \-Represents one block of the \hyperlink{classSnake}{\-Snake}. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classSnakeBlock_a7d24658fa97c3ba0ee5eed5fe1edc96e}{\index{\-Snake\-Block@{\-Snake\-Block}!\-Snake\-Block@{\-Snake\-Block}}
+\index{\-Snake\-Block@{\-Snake\-Block}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{\-Snake\-Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Snake\-Block\-::\-Snake\-Block} (
+\begin{DoxyParamCaption}
+\item[{int}]{x\-Coord, }
+\item[{int}]{y\-Coord, }
+\item[{int}]{img\-Select}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a7d24658fa97c3ba0ee5eed5fe1edc96e}
+
+
+\-Class \-Constructor -\/ \-Creates one \hyperlink{classSnakeBlock}{\-Snake\-Block} at the given postion with the specified image and initializes the data members to default values. \-Precondition\-: \-A new game was created or the \hyperlink{classSnake}{\-Snake} is growing bigger. \-Postcondition\-: \-A new \-Snakeblock is created and added to the \hyperlink{classSnake}{\-Snake}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x\-Coord} & x position to place \hyperlink{classSnakeBlock}{\-Snake\-Block}. \\
+\hline
+{\em y\-Coord} & y position to place \hyperlink{classSnakeBlock}{\-Snake\-Block}. \\
+\hline
+{\em img\-Select} & \-Chooses between the different \hyperlink{classSnakeBlock}{\-Snake\-Block} images. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classSnakeBlock_a409a9f086ec935641087e498ff810bdd}{\index{\-Snake\-Block@{\-Snake\-Block}!auto\-Move@{auto\-Move}}
+\index{auto\-Move@{auto\-Move}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{auto\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-Block\-::auto\-Move} (
+\begin{DoxyParamCaption}
+\item[{int}]{px\-Coord, }
+\item[{int}]{py\-Coord}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a409a9f086ec935641087e498ff810bdd}
+
+
+\-Moves the \hyperlink{classSnakeBlock}{\-Snake\-Block} to the location the \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of it. \-Precondition\-: \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of this \hyperlink{classSnakeBlock}{\-Snake\-Block} was moved. \-Postcondition\-: \-This \hyperlink{classSnakeBlock}{\-Snake\-Block} has been moved to the location the \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of it. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em px\-Coord} & \-The previous x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of it. \\
+\hline
+{\em py\-Coord} & \-The previous y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block} in front of it. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSnakeBlock_a3f50323a5a4f1991a91d8083bf522b01}{\index{\-Snake\-Block@{\-Snake\-Block}!get\-Image@{get\-Image}}
+\index{get\-Image@{get\-Image}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{get\-Image}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Image \& {\bf \-Snake\-Block\-::get\-Image} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a3f50323a5a4f1991a91d8083bf522b01}
+
+
+\-Returns the image of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-Instance of \hyperlink{classGame}{\-Game} called a paint event and the game is started. \-Postcondition\-: \-The image of the \hyperlink{classSnakeBlock}{\-Snake\-Block} will be painted on the screen. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Q\-Image \-The image of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_af82087d3749a207105a1e76a6570f8c0}{\index{\-Snake\-Block@{\-Snake\-Block}!get\-Rect@{get\-Rect}}
+\index{get\-Rect@{get\-Rect}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{get\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Rect {\bf \-Snake\-Block\-::get\-Rect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_af82087d3749a207105a1e76a6570f8c0}
+
+
+\-Returns the rect of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \-Any collision detection or paint event that involes the \hyperlink{classSnakeBlock}{\-Snake\-Block} occured. \-Postcondition\-: \-The \-Qrect of the \hyperlink{classSnakeBlock}{\-Snake\-Block} is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The rect of \hyperlink{classSnakeBlock}{\-Snake\-Block}. 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_a29958e8110acd215354f0b07cdd7c606}{\index{\-Snake\-Block@{\-Snake\-Block}!getx\-Old\-Pos@{getx\-Old\-Pos}}
+\index{getx\-Old\-Pos@{getx\-Old\-Pos}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{getx\-Old\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Snake\-Block\-::getx\-Old\-Pos} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a29958e8110acd215354f0b07cdd7c606}
+
+
+\-Returns the \-Previous x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Previous x position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Previous x position is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The \-Previous x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_a73a38f952998688e6c899ae1fcba4df9}{\index{\-Snake\-Block@{\-Snake\-Block}!getx\-Pos@{getx\-Pos}}
+\index{getx\-Pos@{getx\-Pos}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{getx\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Snake\-Block\-::getx\-Pos} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a73a38f952998688e6c899ae1fcba4df9}
+
+
+\-Returns the \-Current x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Current x position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Current x position is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The \-Current x position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_af012358864082101b782a694ae7863a8}{\index{\-Snake\-Block@{\-Snake\-Block}!gety\-Old\-Pos@{gety\-Old\-Pos}}
+\index{gety\-Old\-Pos@{gety\-Old\-Pos}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{gety\-Old\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Snake\-Block\-::gety\-Old\-Pos} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_af012358864082101b782a694ae7863a8}
+
+
+\-Returns the \-Previous y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Previous y position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Previous y position is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The \-Previous y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_ab78190ae3b87cd4556b90aeaf8fab811}{\index{\-Snake\-Block@{\-Snake\-Block}!gety\-Pos@{gety\-Pos}}
+\index{gety\-Pos@{gety\-Pos}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{gety\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Snake\-Block\-::gety\-Pos} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_ab78190ae3b87cd4556b90aeaf8fab811}
+
+
+\-Returns the \-Current y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Precondition\-: \hyperlink{classSnake}{\-Snake} object requested \-Current y position of \hyperlink{classSnakeBlock}{\-Snake\-Block}. \-Postcondition\-: \-Current y position is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The \-Current y position of the \hyperlink{classSnakeBlock}{\-Snake\-Block}. 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_a0be7cbc3f967b97f72451c7ec60f48e2}{\index{\-Snake\-Block@{\-Snake\-Block}!hits\-Wall@{hits\-Wall}}
+\index{hits\-Wall@{hits\-Wall}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{hits\-Wall}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Snake\-Block\-::hits\-Wall} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a0be7cbc3f967b97f72451c7ec60f48e2}
+
+
+\-Checks if \hyperlink{classSnakeBlock}{\-Snake\-Block} is off the screen (collided with the wall). \-Precondition\-: check\-Collision function in game was called and wrap around is disabled. \-Postcondition\-: \-If \-True, game\-Over will occur. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-Snake\-Blcok is off the screen (collided with the wall). 
+\end{DoxyReturn}
+\hypertarget{classSnakeBlock_a6e5291dffd6e314250491d531d35894a}{\index{\-Snake\-Block@{\-Snake\-Block}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!SnakeBlock@{\-Snake\-Block}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Snake\-Block\-::set\-Position} (
+\begin{DoxyParamCaption}
+\item[{int}]{x\-Coord, }
+\item[{int}]{y\-Coord}
+\end{DoxyParamCaption}
+)}}\label{classSnakeBlock_a6e5291dffd6e314250491d531d35894a}
+
+
+\-Moves the \hyperlink{classSnakeBlock}{\-Snake\-Block} to the given position. \-Precondition\-: \-A \hyperlink{classSnakeBlock}{\-Snake\-Block} object needed to be moved or placed on the screen. \-Postcondition\-: \-The \hyperlink{classSnakeBlock}{\-Snake\-Block} will be moved to the given position. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & \-The x position to move the \hyperlink{classSnakeBlock}{\-Snake\-Block} to. \\
+\hline
+{\em y} & \-The y position to move the \hyperlink{classSnakeBlock}{\-Snake\-Block} to. \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SnakeBlock_8h}{\-Snake\-Block.\-h}\item 
+\hyperlink{SnakeBlock_8cpp}{\-Snake\-Block.\-cpp}\end{DoxyCompactItemize}

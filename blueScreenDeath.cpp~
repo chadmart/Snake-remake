@@ -1,0 +1,36 @@
+#include "blueScreenDeath.h"
+
+// Defining Class Constructor
+// Initializes fChar = ‘+’
+BlueScreenDeath::BlueScreenDeath()
+{
+
+  	image.load("blueScreenDeath.png");
+
+  	rect = image.rect();
+
+	resetState();
+}
+
+// Defining Class Destructor
+BlueScreenDeath::~BlueScreenDeath() 
+{
+
+}
+
+void BlueScreenDeath::resetState() 
+{
+  rect.moveTo(28,150);
+}
+
+
+QRect BlueScreenDeath::getRect()
+{
+  return rect;
+}
+
+QImage & BlueScreenDeath::getImage()
+{
+  return image;
+}
+

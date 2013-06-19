@@ -1,0 +1,148 @@
+\hypertarget{classFood}{\section{\-Food \-Class \-Reference}
+\label{classFood}\index{\-Food@{\-Food}}
+}
+
+
+\-A \hyperlink{classFood}{\-Food} piece \-The parent of all food pieces. \-If not inherited, \hyperlink{classFood}{\-Food} represents a red or green \-Apple \-Logo.  
+
+
+
+
+{\ttfamily \#include $<$\-Food.\-h$>$}
+
+\-Inheritance diagram for \-Food\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFood}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFood_a75d4d7f76fd495cc8133302ca9fdc485}{\hyperlink{classFood_a75d4d7f76fd495cc8133302ca9fdc485}{\-Food} ()}\label{classFood_a75d4d7f76fd495cc8133302ca9fdc485}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Constructor -\/ loads first image, moves to random location. \-Precondition\-: \-A new instance of game was created. \-Postcondition\-: \-A new piece of food is created with default image. \end{DoxyCompactList}\item 
+\hypertarget{classFood_a6f25dffd1fb347c982a53b9a384c611a}{\hyperlink{classFood_a6f25dffd1fb347c982a53b9a384c611a}{$\sim$\-Food} ()}\label{classFood_a6f25dffd1fb347c982a53b9a384c611a}
+
+\begin{DoxyCompactList}\small\item\em \-Class \-Destructor -\/ \-Does \-Nothing. \end{DoxyCompactList}\item 
+void \hyperlink{classFood_ad902c4b35177dc47f4f5845cea946b47}{move\-Food} (\hyperlink{classFood}{\-Food} $\ast$other\-Food)
+\begin{DoxyCompactList}\small\item\em \-Draws \hyperlink{classFood}{\-Food} in a random location. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a piece of \hyperlink{classFood}{\-Food} or \hyperlink{classFood}{\-Food} cheat code key was pressed. \-Postcondition\-: \hyperlink{classFood}{\-Food} is moved to a random location on the screen which is not on top of other\-Food. \end{DoxyCompactList}\item 
+void \hyperlink{classFood_abb8f6f4e6de3a9c30d821a570227b0b3}{move\-Food} (\hyperlink{classFood}{\-Food} $\ast$other\-Food, int which\-Food)
+\begin{DoxyCompactList}\small\item\em \-Draws \hyperlink{classFood}{\-Food} in a random location. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a piece of \hyperlink{classFood}{\-Food} or \hyperlink{classFood}{\-Food} cheat code key was pressed. \-Postcondition\-: \hyperlink{classFood}{\-Food} is moved to a random location on the screen which is not on top of other\-Food. \end{DoxyCompactList}\item 
+void \hyperlink{classFood_a3eb6229d350b6d6dec7256f633c0e603}{move\-Food} (int which\-Food)
+\begin{DoxyCompactList}\small\item\em \-Draws \hyperlink{classFood}{\-Food} in a random location. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a piece of \hyperlink{classFood}{\-Food} or \hyperlink{classFood}{\-Food} cheat code key was pressed. \-Postcondition\-: \hyperlink{classFood}{\-Food} is moved to a random location on the screen which is not on top of other\-Food. \end{DoxyCompactList}\item 
+\hypertarget{classFood_a7a286e4848f36fd65ba15d83cf09712d}{void \hyperlink{classFood_a7a286e4848f36fd65ba15d83cf09712d}{pick\-Location} ()}\label{classFood_a7a286e4848f36fd65ba15d83cf09712d}
+
+\begin{DoxyCompactList}\small\item\em \-Picks a random location to move \hyperlink{classFood}{\-Food} to, but does not move \hyperlink{classFood}{\-Food}. \-Precondition\-: \hyperlink{classFood}{\-Food} needs to be moved to a new location. \-Postcondition\-: \-New location is picked for \hyperlink{classFood}{\-Food} to move to. \end{DoxyCompactList}\item 
+\-Q\-Rect \hyperlink{classFood_a086048638fd5c0da29fa69594dc1a703}{get\-Rect} ()
+\begin{DoxyCompactList}\small\item\em \-Returns rect of \hyperlink{classFood}{\-Food}. \-Precondition\-: \-Any collision detection or paint event that involes the \hyperlink{classFood}{\-Food} occured. \-Postcondition\-: \-The \-Qrect of the \hyperlink{classFood}{\-Food} is returned. \end{DoxyCompactList}\item 
+\-Q\-Image \& \hyperlink{classFood_a8c6c5967ba2f578e35b2938381a1efd6}{get\-Image} ()
+\begin{DoxyCompactList}\small\item\em \-Returns image of \hyperlink{classFood}{\-Food}. \-Precondition\-: \-Instance of \hyperlink{classGame}{\-Game} called a paint event and the game is started. \-Postcondition\-: \-The image of the \hyperlink{classFood}{\-Food} will be painted on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFood_a6cb4da80ded62e777162ed689afff2ec}{int \hyperlink{classFood_a6cb4da80ded62e777162ed689afff2ec}{x}}\label{classFood_a6cb4da80ded62e777162ed689afff2ec}
+
+\begin{DoxyCompactList}\small\item\em \-The x position of \hyperlink{classFood}{\-Food}. \end{DoxyCompactList}\item 
+\hypertarget{classFood_aad0125787e9b00210d2a0b0dc94b39c4}{int \hyperlink{classFood_aad0125787e9b00210d2a0b0dc94b39c4}{y}}\label{classFood_aad0125787e9b00210d2a0b0dc94b39c4}
+
+\begin{DoxyCompactList}\small\item\em \-The y position of \hyperlink{classFood}{\-Food}. \end{DoxyCompactList}\item 
+\hypertarget{classFood_a53968c7ffd02f4a65201438857efe9bf}{\-Q\-Image \hyperlink{classFood_a53968c7ffd02f4a65201438857efe9bf}{image}}\label{classFood_a53968c7ffd02f4a65201438857efe9bf}
+
+\begin{DoxyCompactList}\small\item\em \-The \-Q\-Image of \hyperlink{classFood}{\-Food}. \end{DoxyCompactList}\item 
+\hypertarget{classFood_a1cb41fead62d37b800db81ed9e1f3939}{\-Q\-Rect \hyperlink{classFood_a1cb41fead62d37b800db81ed9e1f3939}{rect}}\label{classFood_a1cb41fead62d37b800db81ed9e1f3939}
+
+\begin{DoxyCompactList}\small\item\em \-The \-Q\-Rect of \hyperlink{classFood}{\-Food}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A \hyperlink{classFood}{\-Food} piece \-The parent of all food pieces. \-If not inherited, \hyperlink{classFood}{\-Food} represents a red or green \-Apple \-Logo. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classFood_a8c6c5967ba2f578e35b2938381a1efd6}{\index{\-Food@{\-Food}!get\-Image@{get\-Image}}
+\index{get\-Image@{get\-Image}!Food@{\-Food}}
+\subsubsection[{get\-Image}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Image \& {\bf \-Food\-::get\-Image} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFood_a8c6c5967ba2f578e35b2938381a1efd6}
+
+
+\-Returns image of \hyperlink{classFood}{\-Food}. \-Precondition\-: \-Instance of \hyperlink{classGame}{\-Game} called a paint event and the game is started. \-Postcondition\-: \-The image of the \hyperlink{classFood}{\-Food} will be painted on the screen. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Image of \hyperlink{classFood}{\-Food}. 
+\end{DoxyReturn}
+\hypertarget{classFood_a086048638fd5c0da29fa69594dc1a703}{\index{\-Food@{\-Food}!get\-Rect@{get\-Rect}}
+\index{get\-Rect@{get\-Rect}!Food@{\-Food}}
+\subsubsection[{get\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Rect {\bf \-Food\-::get\-Rect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFood_a086048638fd5c0da29fa69594dc1a703}
+
+
+\-Returns rect of \hyperlink{classFood}{\-Food}. \-Precondition\-: \-Any collision detection or paint event that involes the \hyperlink{classFood}{\-Food} occured. \-Postcondition\-: \-The \-Qrect of the \hyperlink{classFood}{\-Food} is returned. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The rect of \hyperlink{classFood}{\-Food}. 
+\end{DoxyReturn}
+\hypertarget{classFood_ad902c4b35177dc47f4f5845cea946b47}{\index{\-Food@{\-Food}!move\-Food@{move\-Food}}
+\index{move\-Food@{move\-Food}!Food@{\-Food}}
+\subsubsection[{move\-Food}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Food\-::move\-Food} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Food} $\ast$}]{other\-Food}
+\end{DoxyParamCaption}
+)}}\label{classFood_ad902c4b35177dc47f4f5845cea946b47}
+
+
+\-Draws \hyperlink{classFood}{\-Food} in a random location. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a piece of \hyperlink{classFood}{\-Food} or \hyperlink{classFood}{\-Food} cheat code key was pressed. \-Postcondition\-: \hyperlink{classFood}{\-Food} is moved to a random location on the screen which is not on top of other\-Food. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$other\-Food} & \-The other piece of \hyperlink{classFood}{\-Food} on the screen\\
+\hline
+{\em $\ast$other\-Food} & \-The other piece of \hyperlink{classFood}{\-Food} on the screen. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFood_abb8f6f4e6de3a9c30d821a570227b0b3}{\index{\-Food@{\-Food}!move\-Food@{move\-Food}}
+\index{move\-Food@{move\-Food}!Food@{\-Food}}
+\subsubsection[{move\-Food}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Food\-::move\-Food} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Food} $\ast$}]{other\-Food, }
+\item[{int}]{which\-Food}
+\end{DoxyParamCaption}
+)}}\label{classFood_abb8f6f4e6de3a9c30d821a570227b0b3}
+
+
+\-Draws \hyperlink{classFood}{\-Food} in a random location. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a piece of \hyperlink{classFood}{\-Food} or \hyperlink{classFood}{\-Food} cheat code key was pressed. \-Postcondition\-: \hyperlink{classFood}{\-Food} is moved to a random location on the screen which is not on top of other\-Food. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em $\ast$other\-Food} & \-The other piece of \hyperlink{classFood}{\-Food} on the screen. \\
+\hline
+{\em which\-Food} & \-The integer switch between \hyperlink{classFood}{\-Food} images. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFood_a3eb6229d350b6d6dec7256f633c0e603}{\index{\-Food@{\-Food}!move\-Food@{move\-Food}}
+\index{move\-Food@{move\-Food}!Food@{\-Food}}
+\subsubsection[{move\-Food}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Food\-::move\-Food} (
+\begin{DoxyParamCaption}
+\item[{int}]{which\-Food}
+\end{DoxyParamCaption}
+)}}\label{classFood_a3eb6229d350b6d6dec7256f633c0e603}
+
+
+\-Draws \hyperlink{classFood}{\-Food} in a random location. \-Precondition\-: \-The \hyperlink{classSnake}{\-Snake} head collided with a piece of \hyperlink{classFood}{\-Food} or \hyperlink{classFood}{\-Food} cheat code key was pressed. \-Postcondition\-: \hyperlink{classFood}{\-Food} is moved to a random location on the screen which is not on top of other\-Food. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em which\-Food} & \-The integer switch between \hyperlink{classFood}{\-Food} images. \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Food_8h}{\-Food.\-h}\item 
+\hyperlink{Food_8cpp}{\-Food.\-cpp}\end{DoxyCompactItemize}

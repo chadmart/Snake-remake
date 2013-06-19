@@ -1,0 +1,34 @@
+/*!\file FoodWinner.cpp
+ * 
+ * \brief Represents a FoodWinner piece.
+ * 
+ * \author Chad Martin
+ * 
+ * A daughter of the Food class. Represents a Linux Logo.
+ * If Snake collides with FoodWinner, a victory screen will occur.
+ */
+
+#include "FoodWinner.h"
+
+/*! Class Constructor - loads first image, moves to random location.
+ * Precondition: A new instance of game was created.
+ * Postcondition: A new piece of food is created with Linux logo image.*/
+FoodWinner::FoodWinner():
+	Food()
+{
+
+  	image.load("linux.png");
+
+  	rect = image.rect();
+	
+	pickLocation(); // Picks a random location to move Food
+
+	rect.moveTo(x,y); // Moves Food to location
+}
+
+/*! Class Destructor - Does Nothing*/
+FoodWinner::~FoodWinner() 
+{
+  	
+}
+
